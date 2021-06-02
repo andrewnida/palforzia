@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 9 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Path</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Button/Get-Informed" transform="translate(-158.000000, -8.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Desktop/Button/CTA---Small">
+                <g id="Desktop/Atom/Button/CTA-Small">
+                    <g id="Group" transform="translate(31.000000, 6.000000)">
+                        <path d="M131.844828,7.67816092 L131.844828,12.9224138 C131.844828,13.5175482 132.327279,14 132.922414,14 C133.517548,14 134,13.5175482 134,12.9224138 L134,5.07758621 C134,4.48245178 133.517548,4 132.922414,4 L125.077586,4 C124.482452,4 124,4.48245178 124,5.07758621 C124,5.67272064 124.482452,6.15517241 125.077586,6.15517241 L130.321839,6.15517241 L131.815386,6.18461393 L131.844828,7.67816092 Z" id="Path" transform="translate(129.000000, 9.000000) rotate(45.000000) translate(-129.000000, -9.000000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

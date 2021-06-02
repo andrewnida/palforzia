@@ -1,0 +1,195 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  width: 100%;
+
+  padding-bottom: 6rem;
+
+  color: $color-white;
+  line-height: calc(1.8 / 1.2);
+  background-color: $color-primary;
+
+  @include lg-desktop {
+    padding-bottom: 6.5rem;
+  }
+}
+
+.footer-menu {
+  @extend %responsive-section;
+
+  padding: 0 $default-gutter;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem 0;
+
+    @include lg-desktop {
+      padding: 2.3rem 0 0;
+      flex-direction: row;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        @include lg-desktop {
+          margin-right: 4.9rem;
+        }
+      }
+
+      &__link {
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+        line-height: calc(1.8 / 1.4);
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 1.65rem 0;
+
+        @include transition(color);
+
+        &:link,
+        &:visited {
+          color: currentColor;
+          text-decoration: none;
+        }
+
+        &:hover {
+          color: $color-secondary;
+        }
+
+        &:active,
+        &:focus {
+          outline: none;
+          color: $color-secondary;
+        }
+
+        @include lg-desktop {
+          line-height: calc(2 / 1.4);
+        }
+
+        &__icon {
+          width: 2rem;
+          height: 2rem;
+
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.footer-questions {
+  @extend %responsive-section;
+
+  padding: 0 $default-gutter;
+
+  &__text {
+    font-size: 1.2rem;
+    line-height: calc(1.8 / 1.2);
+  }
+
+  &__link {
+    @include transition(color);
+
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: $color-secondary;
+      font-weight: 600;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      outline: none;
+      color: lighten($color-secondary, 5%);
+    }
+  }
+}
+
+.footer-home {
+  &__container {
+    @extend %responsive-section;
+
+    align-self: flex-start;
+
+    margin-top: 3rem;
+    padding: 0 $default-gutter;
+    margin-bottom: 4.1rem;
+
+    @include lg-desktop {
+      position: absolute;
+      align-self: initial;
+
+      bottom: 6.5rem;
+
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    width: 25rem;
+    height: 11.7rem;
+
+    vertical-align: bottom;
+  }
+
+  @include lg-desktop {
+    position: absolute;
+    z-index: 1;
+
+    bottom: 0;
+    right: $default-gutter;
+  }
+}
+
+.footer-legal {
+  @extend %responsive-section;
+
+  padding: 0 $default-gutter;
+
+  @include lg-desktop {
+    margin-top: 3.5rem;
+  }
+
+  &__text {
+    max-width: 63.5rem;
+
+    font-size: 1.2rem;
+
+    line-height: calc(1.8 / 1.2);
+
+    &--copyright {
+      &:before {
+        content: '\00A9 ';
+      }
+    }
+  }
+}
+
+.footer-audience {
+  @extend %responsive-section;
+
+  padding: 0 $default-gutter;
+  margin-top: 2rem;
+
+  &__text {
+    max-width: 63.5rem;
+
+    font-size: 1.4rem;
+    line-height: calc(2.2 / 1.4);
+
+    @include lg-desktop {
+      font-size: 1.6rem;
+      line-height: calc(2.2 / 1.6);
+    }
+
+    strong {
+      font-weight: 600;
+    }
+  }
+}

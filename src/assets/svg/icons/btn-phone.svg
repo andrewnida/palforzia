@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Phone</title>
+    <g id="Technical-Layout" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0.0-Mobile---Hamburger-Menu-Expanded---Interaction-State" transform="translate(-17.000000, -860.000000)">
+            <g id="Icon/Phone" transform="translate(17.000000, 860.000000)">
+                <g id="Phone">
+                    <circle id="Oval-3" fill="#36B0A1" cx="10" cy="10" r="10"></circle>
+                    <path d="M11.5833277,14.3634819 C13.9942489,15.0899188 14.4158409,14.3772668 15.1997172,13.2075281 C15.7331186,12.7506901 14.8111077,10.9042548 13.0754347,10.9042548 C11.5833277,10.9042548 12.4291247,13.6625649 9.54694597,10.9042548 C6.66476721,8.14594475 10.016359,8.69569814 8.78187108,6.83856707 C7.54738316,4.98143601 7.54738316,4.98143601 6.61714128,5.3217018 C5.6868994,5.66196759 4.34824779,7.22403845 5.9332009,9.56083632 C7.51815401,11.8976342 9.08466798,13.1859287 11.5833277,14.3634819 Z" id="Oval" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

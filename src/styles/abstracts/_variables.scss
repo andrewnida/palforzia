@@ -1,0 +1,46 @@
+// RESPONSIVE BREAKPOINTS
+$xl-device-width: 75em; // 1200px
+$lg-device-width: 62em; // 992px
+$md-device-width: 48em; // 768px;
+$sm-device-width: 36em; // 576px;
+
+// LAYOUT WIDTHS
+$default-width: 71.5em; // 1144px;
+$max-width: 90em; // 1440px;
+
+// MARGINS AND PADDINGS
+$default-gutter: 1.7rem;
+
+// COLORS
+$color-white: #ffffff;
+$color-primary-white: #edeef8;
+$color-grey-1: #f5f5f5;
+
+$color-default-text-color: #333333;
+$color-text-color-2: #424242;
+
+$color-primary: #4f5dbf;
+$color-primary-dark: #4f2984;
+$color-primary-transparent: rgba(81, 81, 118, 0.7);
+
+$color-secondary: #36b0a1;
+$color-secondary-light: #5fc5bf;
+
+$color-grey-border: 1px solid rgba(81, 48, 125, 0.1);
+
+// TYPOGRAPHY
+$default-font-families: 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+$default-font-size: 1.6rem;
+$default-line-height: 1.5;
+
+$secondary-font-families: 'Calibri', 'Arial Narrow';
+
+$knockout-28: 'Knockout 28 A', 'Knockout 28 B', $secondary-font-families;
+$knockout-31: 'Knockout 31 A', 'Knockout 31 B', $secondary-font-families;
+$knockout-51: 'Knockout 51 A', 'Knockout 51 B', $secondary-font-families;
+$knockout-54: 'Knockout 54 A', 'Knockout 54 B', $secondary-font-families;
+
+// ANIMATIONS
+$default-transition-time: 0.3s;
+$default-transition-easing: cubic-bezier(0.19, 0.71, 0.36, 0.93);
+$default-transition: all;

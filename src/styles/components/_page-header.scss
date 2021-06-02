@@ -1,0 +1,38 @@
+.page-header {
+  margin-top: 3.2rem;
+  margin-bottom: 4.7rem;
+  padding-bottom: 1.4rem;
+
+  @include desktop {
+    margin-top: 3rem;
+    margin-bottom: 5.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__heading {
+    position: relative;
+
+    padding-bottom: 2rem;
+
+    &:after {
+      content: '';
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+
+      width: 11.7rem;
+      height: 3px;
+
+      background-image: linear-gradient(
+        270deg,
+        $color-secondary-light,
+        $color-primary-dark
+      );
+    }
+
+    @include desktop {
+      padding-bottom: 3.5rem;
+    }
+  }
+}

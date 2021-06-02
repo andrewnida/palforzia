@@ -1,0 +1,42 @@
+.u-center-text {
+  text-align: center !important;
+}
+.u-semi-bold-text {
+  font-weight: 600 !important;
+}
+.u-bold-text {
+  font-weight: 700 !important;
+}
+.u-italic-text {
+  font-style: italic !important;
+}
+
+/*
+ * Responsive Section
+*/
+%responsive-section {
+  width: 100%;
+
+  @include desktop {
+    max-width: $default-width;
+  }
+}
+
+/*
+ * Full Bleed Section
+*/
+.u-full-bleed {
+  position: relative;
+
+  &:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100vw;
+    right: -100vw;
+    background: inherit;
+    height: 100%;
+  }
+}

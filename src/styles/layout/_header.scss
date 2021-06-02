@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: $max-width;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  &__audience {
+    @extend %responsive-section;
+
+    background: $color-grey-1;
+    padding: 0.4rem $default-gutter 0.6rem;
+
+    &-text {
+      font-size: 1.2rem;
+      line-height: calc(1.2 / 1.2);
+      font-weight: 400;
+
+      strong {
+        font-weight: 600;
+      }
+    }
+
+    @include desktop {
+      padding-top: 0.2rem;
+      padding-bottom: 0.4rem;
+
+      &-text {
+        line-height: calc(2.1 / 1.2);
+      }
+    }
+  }
+}

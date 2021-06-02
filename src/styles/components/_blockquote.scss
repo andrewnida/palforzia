@@ -1,0 +1,42 @@
+.blockquote {
+  background-color: $color-primary-white;
+  border-radius: 0 2rem 2rem 0;
+  border-left: 1rem solid $color-primary;
+  padding: 2.8rem 3rem 2.8rem 2.5rem;
+
+  &__heading {
+    font-weight: 600;
+    font-size: 2rem;
+    color: $color-primary;
+    letter-spacing: 0;
+    line-height: calc(2.6 / 2);
+
+    sup {
+      font-size: 1.2rem;
+    }
+  }
+
+  p:first-of-type {
+    padding-top: 1.2rem;
+  }
+
+  a {
+    cursor: pointer;
+
+    @include transition(color);
+
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: $color-secondary;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &:focus {
+      outline-color: $color-primary-transparent;
+    }
+  }
+}

@@ -1,0 +1,112 @@
+@mixin list-bullets() {
+  & > li {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 1rem;
+      right: calc(100% + 0.75rem);
+
+      width: 0.4rem;
+      height: 0.4rem;
+
+      background: $color-primary;
+      border-radius: 0.2rem;
+    }
+  }
+}
+
+/*
+ * scss input:
+ * @include transition(height width transform, 0.2s 0.3s, linear, 0s);
+ *
+ * css output:
+ * transition: height 0.2s linear 0s, width 0.3s linear 0s, transform 0.3s linear 0s;
+*/
+
+@mixin transition(
+  $prop: $default-transition,
+  $time: $default-transition-time,
+  $easing: $default-transition-easing,
+  $delay: 0s
+) {
+  $transition: ();
+  @for $i from 1 through length($prop) {
+    @for $j from 0 to (length($prop)) - (length($time)) {
+      $time: join($time, nth($time, -1));
+    }
+    @for $j from 0 to (length($prop)) - (length($easing)) {
+      $easing: join($easing, nth($easing, -1));
+    }
+    @for $j from 0 to (length($prop)) - (length($delay)) {
+      $delay: join($delay, nth($delay, -1));
+    }
+
+    $transition: append(
+      $transition,
+      (nth($prop, $i) nth($time, $i) nth($easing, $i) nth($delay, $i)),
+      $separator: comma
+    );
+  }
+  transition: $transition;
+}
+
+/*
+ * Media Queries
+*/
+
+@mixin desktop {
+  @media (min-width: #{$md-device-width}) {
+    @content;
+  }
+}
+
+@mixin lg-desktop {
+  @media (min-width: #{$lg-device-width}) {
+    @content;
+  }
+}
+
+@mixin xl-desktop {
+  @media (min-width: #{$xl-device-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$md-device-width - .1em}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$lg-device-width - .1em}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$xl-device-width}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$lg-device-width}) and (max-width: #{$xl-device-width}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$md-device-width}) and (max-width: #{$lg-device-width}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: #{$sm-device-width}) and (max-width: #{$md-device-width}) {
+    @content;
+  }
+}

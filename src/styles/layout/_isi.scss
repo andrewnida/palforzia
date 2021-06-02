@@ -1,0 +1,125 @@
+.isi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  background: $color-white;
+
+  border-top: 0.6rem solid $color-primary-white;
+
+  padding-top: 2rem;
+  padding-bottom: 2.2rem;
+
+  $this: &;
+
+  &__heading {
+    color: $color-primary;
+
+    font-family: $knockout-51;
+    font-size: 1.8rem;
+    font-weight: 500;
+
+    text-transform: uppercase;
+  }
+
+  &__subheading {
+    font-family: $knockout-51;
+    font-size: 1.6rem;
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    margin-top: 0.6rem;
+  }
+
+  &__paragraph {
+    margin-top: 0.7rem;
+
+    &:not(:last-child) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__link {
+    &:visited,
+    &:link {
+      color: $color-secondary;
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:active {
+      color: lighten($color-secondary, 5%);
+    }
+  }
+
+  &__block {
+    &:first-child {
+      order: -1;
+
+      @include desktop {
+        flex: 1;
+
+        max-width: 48.6%;
+      }
+    }
+
+    &:nth-last-child(2) {
+      @include desktop {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &:nth-last-child(1) {
+      margin-bottom: 2.5rem;
+    }
+
+    &__list {
+      padding-top: 2.2rem;
+      margin-top: 1.5rem;
+
+      border: 1px solid $color-default-text-color;
+
+      #{$this}__heading {
+        text-align: center;
+      }
+
+      & > ul {
+        margin: 0.9rem 2.5rem 2.4rem 4.4rem;
+
+        letter-spacing: -0.15px;
+
+        @include desktop {
+          margin-top: 0.7rem;
+        }
+
+        @include list-bullets;
+
+        #{$this}__paragraph {
+          margin: 0;
+        }
+      }
+    }
+
+    &--text {
+      margin-top: 3.1rem;
+
+      @include desktop {
+        margin-top: 3.8rem;
+      }
+    }
+
+    &--pinned {
+      @include desktop {
+        flex: 1;
+        order: -1;
+        max-width: 48.6%;
+        margin-top: 0;
+      }
+
+      #{$this}__heading {
+        margin-bottom: 1.4rem;
+      }
+    }
+  }
+}

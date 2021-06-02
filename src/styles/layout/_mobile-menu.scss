@@ -1,0 +1,215 @@
+.mobile-menu {
+  align-self: center;
+
+  width: 3.9rem;
+  height: 4.3rem;
+
+  line-height: normal;
+
+  @include lg-desktop {
+    display: none;
+  }
+
+  &__btn {
+    $btn: &;
+
+    position: relative;
+
+    padding-bottom: 0.2rem;
+    margin-right: 0.2rem;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    color: $color-primary;
+
+    background: none;
+
+    @include transition(color);
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: $color-secondary;
+    }
+
+    &__srOnly {
+      position: absolute;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+
+      width: 0.1rem;
+      height: 0.1rem;
+
+      border: 0;
+      padding: 0;
+      margin: -0.1rem;
+
+      white-space: nowrap;
+    }
+
+    &__bar {
+      display: block;
+      position: absolute;
+
+      left: calc(50% - 3.3rem * 0.5);
+
+      width: 3.3rem;
+      height: 0.2rem;
+
+      border-radius: 0.2rem;
+
+      background-color: currentColor;
+
+      opacity: 1;
+
+      transform: rotate(0deg);
+
+      @include transition(transform left top width opacity);
+
+      &:nth-of-type(2) {
+        top: 0.3rem;
+      }
+
+      &:nth-of-type(3) {
+        top: 1.2rem;
+      }
+
+      &:nth-of-type(4) {
+        top: 2.1rem;
+      }
+    }
+
+    &__label {
+      display: block;
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+
+      color: currentColor;
+
+      font-size: 1rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    &--expanded {
+      #{$btn}__bar {
+        &:nth-of-type(2) {
+          top: 1.2rem;
+          transform: rotate(45deg);
+          left: 0.3rem;
+        }
+
+        &:nth-of-type(3) {
+          width: 0;
+          opacity: 0;
+        }
+
+        &:nth-of-type(4) {
+          top: 1.2rem;
+          transform: rotate(-45deg);
+          left: 0.3rem;
+        }
+      }
+    }
+  }
+
+  &__container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    overflow-y: scroll;
+    background: $color-primary;
+
+    &--expanded {
+      display: block;
+    }
+  }
+
+  &__list {
+    background-color: $color-primary;
+
+    border-bottom: 0.1rem solid $color-white;
+
+    padding-bottom: 2rem;
+
+    &__item {
+      &__link {
+        display: block;
+        font-weight: 600;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        line-height: calc(1.9 / 1.6);
+        padding: 2rem $default-gutter;
+
+        @include transition(background-color);
+
+        &:link,
+        &:visited {
+          color: $color-white;
+          text-decoration: none;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: $color-secondary;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  &__utility {
+    background-color: $color-primary;
+
+    padding-top: 3rem;
+    padding-bottom: 2.7rem;
+
+    &__item {
+      &__link {
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        font-size: 1.4rem;
+        position: relative;
+
+        &--phone {
+          display: flex;
+          align-items: center;
+          line-height: 1;
+        }
+
+        .btn__icon--utility {
+          width: 1.4rem;
+          height: 1.4rem;
+          margin-left: 1.2rem;
+          position: relative;
+          top: 0.2rem;
+        }
+
+        .btn__icon--phone {
+          width: 2rem;
+          height: 2rem;
+          margin-right: 1.4rem;
+          position: relative;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.utility-menu {
+  @extend %responsive-section;
+
+  display: block;
+
+  @include tablet {
+    display: none;
+  }
+
+  background-color: $color-primary;
+
+  padding: 1.3rem $default-gutter 1.3rem;
+
+  &__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:nth-of-type(2) {
+        margin: 0 2rem 0 4rem;
+      }
+
+      &:nth-of-type(3) {
+        margin: 0 4rem 0 2rem;
+      }
+
+      &:last-of-type {
+        margin-left: 2.4rem;
+      }
+
+      &--btn {
+        flex: 0 0 200px;
+      }
+
+      &__link {
+        @include transition(color);
+
+        &:link,
+        &:visited {
+          font-weight: 600;
+          font-size: 1.4rem;
+
+          color: $color-white;
+
+          line-height: calc(1.5 / 1.4);
+          text-decoration: none;
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          outline: none;
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+}

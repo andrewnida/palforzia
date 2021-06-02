@@ -1,0 +1,91 @@
+.server-message {
+  background: $color-primary;
+
+  color: $color-white;
+
+  text-align: center;
+
+  padding-bottom: 13.8rem;
+
+  @include desktop {
+    padding-bottom: 14.4rem;
+  }
+
+  &__heading {
+    width: 100%;
+
+    font-size: 4.2rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    padding-top: 9.3rem;
+
+    @include desktop {
+      font-size: 7.2rem;
+
+      padding-top: 12.6rem;
+    }
+  }
+
+  &__details {
+    max-width: 88%;
+
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-weight: 600;
+
+    @include desktop {
+      max-width: 92rem;
+
+      margin-top: 2rem;
+
+      font-size: 2rem;
+
+      line-height: calc(2.4 / 2);
+    }
+  }
+
+  &__btn {
+    max-width: 30rem;
+
+    margin-top: 4rem;
+  }
+
+  $this: &;
+
+  &--wide {
+    padding-bottom: 16.5rem;
+
+    @include desktop {
+      padding-bottom: 13rem;
+    }
+
+    #{$this}__heading {
+      font-size: 6.4rem;
+
+      letter-spacing: 1.75rem;
+
+      padding-top: 16rem;
+
+      @include desktop {
+        font-size: 14rem;
+
+        letter-spacing: 4rem;
+        line-height: normal;
+
+        padding-top: 11.8rem;
+      }
+    }
+
+    #{$this}__details {
+      margin-top: 1.8rem;
+
+      @include desktop {
+        margin-top: 0.8rem;
+      }
+    }
+  }
+}

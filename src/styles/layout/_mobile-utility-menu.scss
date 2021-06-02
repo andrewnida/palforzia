@@ -1,0 +1,74 @@
+.mobile-utility-menu {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+
+  background: $color-white;
+  width: 100%;
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.1rem;
+    row-gap: 0.1rem;
+
+    &__item {
+      background-color: $color-primary;
+
+      &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include transition(background-color);
+
+        &:link,
+        &:visited {
+          font-size: 1.1rem;
+          font-weight: 600;
+
+          color: $color-white;
+
+          line-height: calc(1.2 / 1.1);
+          text-decoration: none;
+          text-align: center;
+          text-transform: uppercase;
+          padding: 0.7rem 0 0.7rem;
+        }
+
+        &:hover,
+        &:active {
+          background-color: $color-secondary;
+        }
+
+        &:focus {
+          outline: none;
+          background-color: lighten($color-primary, 5%);
+        }
+
+        &-icon {
+          margin-left: 1rem;
+
+          width: 1.2rem;
+          height: 1.2rem;
+        }
+      }
+
+      &--secondary {
+        background-color: $color-secondary;
+        &__link {
+          &:hover,
+          &:active {
+            background-color: $color-primary;
+          }
+
+          &:focus {
+            background-color: lighten($color-secondary, 5%);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  &:after {
+    content: '';
+
+    position: fixed;
+    visibility: hidden;
+    z-index: 10000;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: $color-primary-transparent;
+
+    opacity: 0;
+
+    @include transition(opacity visibility);
+    transition-delay: 125ms;
+  }
+
+  &-overlay:after {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0;
+  }
+}
+
+.section-container {
+  @extend %responsive-section;
+
+  padding: 0 $default-gutter;
+  margin: 0 auto;
+}
+
+.dummy-container {
+  @extend %responsive-section;
+
+  padding: 0 $default-gutter;
+  margin: 0 auto;
+}

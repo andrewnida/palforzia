@@ -1,0 +1,201 @@
+.header-menu {
+  @extend %responsive-section;
+
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+
+  width: 100%;
+
+  padding: 0.9rem $default-gutter 1.4rem;
+
+  background-color: $color-white;
+
+  line-height: 0;
+
+  @include lg-desktop {
+    padding: 1.8rem $default-gutter;
+  }
+
+  &__link {
+    &:active,
+    &:focus {
+      outline-color: $color-secondary-light;
+    }
+
+    &--image {
+      height: 5.5rem;
+
+      @include lg-desktop {
+        height: 7rem;
+      }
+    }
+  }
+}
+
+.header-nav {
+  display: none;
+  position: relative;
+  line-height: initial;
+
+  @include lg-desktop {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    position: relative;
+    top: -0.2rem;
+
+    &__item {
+      margin: 0 2.1rem;
+      text-align: center;
+
+      $this: &;
+
+      &:last-child {
+        #{$this}__container {
+          right: -2.1rem;
+          left: unset;
+        }
+      }
+
+      &__btn,
+      &__link {
+        display: block;
+        position: relative;
+
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: $color-primary;
+
+        line-height: calc(1.9 / 1.6);
+        text-transform: uppercase;
+        white-space: pre-wrap;
+        letter-spacing: 0;
+
+        @include transition(color);
+
+        &:link,
+        &:visited {
+          text-decoration: none;
+        }
+
+        &:active,
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &__link:hover,
+      &__link:active,
+      &__link:focus {
+        color: $color-secondary;
+      }
+
+      &__link--underline {
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: -0.8rem;
+          left: 0;
+          width: 100%;
+          height: 0.2rem;
+
+          opacity: 0;
+          background: $color-secondary;
+
+          @include transition(opacity, $default-transition-time * 1.2);
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+
+      &__btn {
+        border: 0;
+        background: none;
+        position: relative;
+        cursor: pointer;
+
+        &__icon {
+          position: absolute;
+          bottom: -1.7rem;
+          left: calc(50% - 0.7rem);
+          width: 1.4rem;
+          height: 0.9rem;
+
+          @include transition(transform, $default-transition-time * 1.2);
+
+          path {
+            @include transition(fill);
+            fill: currentColor;
+          }
+        }
+      }
+
+      &__container {
+        display: none;
+        position: absolute;
+        padding-top: 2.4rem;
+        top: 100%;
+        z-index: 1;
+        left: -6rem;
+      }
+
+      &__submenu {
+        width: 35rem;
+        line-height: initial;
+
+        background: $color-white;
+        border: $color-grey-border;
+        border-radius: 10px;
+        overflow: hidden;
+
+        &__item {
+          &:last-child {
+            border-top: 1px solid $color-primary;
+          }
+
+          &__link {
+            text-align: left;
+            padding: 1.3rem 1.2rem;
+
+            @include transition(background-color);
+
+            &:hover,
+            &:focus,
+            &:active {
+              color: $color-primary;
+              background-color: $color-primary-white;
+            }
+          }
+        }
+      }
+
+      &--current {
+        #{$this}__btn {
+          color: $color-secondary;
+        }
+      }
+
+      &--active {
+        #{$this}__container {
+          display: block;
+        }
+
+        #{$this}__btn {
+          &__icon {
+            transform: rotateX(180deg);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.cta-callout {
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 3.2rem;
+  padding-bottom: 4rem;
+
+  background-color: $color-primary-white;
+
+  &__heading {
+    font-family: $knockout-31;
+    font-size: 2.4rem;
+    font-weight: 400;
+
+    color: $color-primary;
+
+    line-height: calc(3 / 2.4);
+  }
+
+  &__cta {
+    margin-top: 4.2rem;
+    max-width: 28.2rem;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 4.4rem;
+    padding-bottom: 4.4rem;
+
+    &__heading {
+      width: 66.7%;
+    }
+
+    &__cta {
+      margin-top: 0;
+      max-height: 4.4rem;
+      max-width: 30rem;
+      margin-left: 2rem;
+    }
+  }
+}

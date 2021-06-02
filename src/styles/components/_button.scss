@@ -1,0 +1,159 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: calc(1.8 / 1.6);
+  letter-spacing: 0;
+  padding: 1rem 4rem 0.8rem 1rem;
+
+  background: $color-secondary;
+
+  border-width: 2px;
+  border-style: solid;
+  border-color: $color-secondary;
+  border-radius: 1rem;
+
+  text-align: center;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+
+  width: 100%;
+  min-height: 4.4rem;
+
+  @include transition(border-width border-color color background-color);
+
+  @include desktop {
+    padding: 1rem;
+
+    line-height: calc(1.9 / 1.6);
+
+    white-space: initial;
+  }
+
+  $this: &;
+
+  &,
+  &:link,
+  &:visited {
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: $color-secondary;
+    background: $color-white;
+
+    #{$this}__icon {
+      path {
+        fill: currentColor;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+
+    height: 1.8rem;
+    right: 1.8rem; // 2.8rem before CTACallout implementation
+
+    &--arrow {
+      height: 1.4rem;
+      right: 3rem;
+    }
+
+    path {
+      @include transition(fill);
+      fill: currentColor;
+    }
+
+    @include desktop {
+      position: relative;
+      right: initial;
+      margin-left: 1.8rem;
+    }
+  }
+
+  &--primary {
+    &,
+    &:link,
+    &:visited {
+      border-color: $color-white;
+      background: $color-primary;
+    }
+
+    &:hover {
+      color: $color-white;
+      border-color: $color-secondary;
+      background: $color-secondary;
+
+      #{$this}__icon {
+        path {
+          fill: currentColor;
+        }
+      }
+    }
+  }
+
+  &--white {
+    &,
+    &:link,
+    &:visited {
+      border-color: $color-secondary;
+      background: $color-white;
+      color: $color-secondary;
+
+      #{$this}__icon {
+        path {
+          fill: currentColor;
+        }
+      }
+    }
+
+    &:hover {
+      color: $color-white;
+      border-color: $color-secondary;
+      background: $color-secondary;
+
+      #{$this}__icon {
+        path {
+          fill: currentColor;
+        }
+      }
+    }
+  }
+
+  &--small {
+    font-size: 1.4rem;
+    line-height: calc(1.8 / 1.4);
+
+    border-width: 1px;
+
+    padding: 0.5rem 0;
+
+    min-height: 3rem;
+
+    #{$this}__icon {
+      margin-left: 1rem;
+      height: 1.1rem;
+
+      &--arrow {
+        height: 1.4rem;
+      }
+    }
+
+    #{this}--primary {
+      #{this}__icon {
+        margin-left: 1.5rem;
+      }
+    }
+
+    @include desktop {
+      min-height: 3rem;
+    }
+  }
+}
