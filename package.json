@@ -1,0 +1,72 @@
+{
+  "name": "aimt-www-hcp",
+  "description": "Aimmune PALFORZIA Pro website for healthcare providers",
+  "version": "1.0.0",
+  "author": "Andrew Nida <andrew.nida@rapp.com>",
+  "dependencies": {
+    "@contentful/rich-text-react-renderer": "^14.1.1",
+    "babel-preset-gatsby": "^0.5.8",
+    "body-scroll-lock": "^3.1.5",
+    "classnames": "^2.2.6",
+    "gatsby-image": "^2.4.16",
+    "gatsby-plugin-gdpr-cookies": "^1.0.7",
+    "gatsby-plugin-google-fonts-v2": "0.0.6",
+    "gatsby-plugin-react-helmet": "^3.3.10",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-sass": "^2.3.12",
+    "gatsby-plugin-sharp": "^2.5.6",
+    "gatsby-source-contentful": "^2.3.37",
+    "gatsby-source-filesystem": "^2.3.24",
+    "gatsby-transformer-remark": "^2.8.28",
+    "gatsby-transformer-sharp": "^2.5.13",
+    "gsap": "^3.5.1",
+    "js-cookie": "^2.2.1",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-focus-lock": "^2.4.1",
+    "react-helmet": "^6.1.0",
+    "sharp": "^0.25.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "chalk": "^4.1.0",
+    "contentful-import": "^7.9.6",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.20.6",
+    "gatsby": "^2.24.47",
+    "gatsby-plugin-root-import": "^2.0.5",
+    "gh-pages": "^2.2.0",
+    "inquirer": "^7.1.0",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "yargs-parser": "^18.1.3"
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "homepage": "https://github.com/contentful-userland/gatsby-contentful-starter#readme",
+  "keywords": [
+    "aimmune",
+    "palforzia"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://rapp-us.visualstudio.com/DefaultCollection/RAPP%20LA%20-%20Aimmune%20Projects/_git/AIMT_WWW_HCP"
+  },
+  "scripts": {
+    "dev": "npm run develop",
+    "develop": "gatsby develop",
+    "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md' 'bin/*.js'",
+    "build": "gatsby build",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "start": "npm run develop",
+    "cleanup-repository": "yarn remove contentful-import chalk inquirer && node ./bin/cleanup.js && rimraf bin contentful"
+  }
+}
